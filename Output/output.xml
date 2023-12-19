@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20231219 15:44:07.099" rpa="false" schemaversion="4">
+<suite id="s1" name="API Demo" source="C:\Users\KEN203364\PycharmProjects\RobotFramework\Api_Tests\API_Demo.robot">
+<test id="s1-t1" name="Quick GET Request Test" line="16">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>params=page=${page_id}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231219 15:44:07.187" level="TRACE">Arguments: [ 'https://reqres.in/api/users' | params='page=2' | expected_status='200' ]</msg>
+<msg timestamp="20231219 15:44:07.189" level="DEBUG">Starting new HTTPS connection (1): reqres.in:443</msg>
+<msg timestamp="20231219 15:44:08.860" level="DEBUG">https://reqres.in:443 "GET /api/users?page=2 HTTP/1.1" 200 None</msg>
+<msg timestamp="20231219 15:44:08.860" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231219 15:44:08.860" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 19 Dec 2023 12:44:09 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1702888886&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=ZcHJ6mHuI1%2Fe0DXpX6MMlP2AIV6r1akYt0CD9BMHtOA%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1702888886&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=ZcHJ6mHuI1%2Fe0DXpX6MMlP2AIV6r1akYt0CD9BMHtOA%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'REVALIDATED', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '837fbc3ebb377485-MIA', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20231219 15:44:08.860" level="TRACE">Return: &lt;Response [200]&gt;</msg>
+<msg timestamp="20231219 15:44:08.860" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231219 15:44:07.186" endtime="20231219 15:44:08.860"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231219 15:44:08.861" level="TRACE">Arguments: [ {'data': [{'avatar': 'https://reqres.in/img/faces/7-image.jpg',
+           'email': 'michael.lawson@reqres.in',
+           'first_name': 'Michael',
+           'id': 7,
+           'last_name': 'Lawson'},
+          {'avatar': 'https://reqres.in/img/faces/8-image.jpg',
+           'email': 'lindsay.ferguson@reqres.in',
+           'first_name': 'Lindsay',
+           'id': 8,
+           'last_name': 'Ferguson'},
+          {'avatar': 'https://reqres.in/img/faces/9-image.jpg',
+           'email': 'tobias.funke@reqres.in',
+           'first_name': 'Tobias',
+           'id': 9,
+           'last_name': 'Funke'},
+          {'avatar': 'https://reqres.in/img/faces/10-image.jpg',
+           'email': 'byron.fields@reqres.in',
+           'first_name': 'Byron',
+           'id': 10,
+           'last_name': 'Fields'},
+          {'avatar': 'https://reqres.in/img/faces/11-image.jpg',
+           'email': 'george.edwards@reqres.in',
+           'first_name': 'George',
+           'id': 11,
+           'last_name': 'Edwards'},
+          {'avatar': 'https://reqres.in/img/faces/12-image.jpg',
+           'email': 'rachel.howell@reqres.in',
+           'first_name': 'Rachel',
+           'id': 12,
+           'last_name': 'Howell'}],
+ 'page': 2,
+ 'per_page': 6,
+ 'support': {'text': 'To keep ReqRes free, contributions towards server costs are appreciated!',
+             'url': 'https://reqres.in/#support-heading'},
+ 'total': 12,
+ 'total_pages': 2} ]</msg>
+<msg timestamp="20231219 15:44:08.862" level="INFO">{'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'last_name': 'Ferguson', 'avatar': 'https://reqres.in/img/faces/8-image.jpg'}, {'id': 9, 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'last_name': 'Funke', 'avatar': 'https://reqres.in/img/faces/9-image.jpg'}, {'id': 10, 'email': 'byron.fields@reqres.in', 'first_name': 'Byron', 'last_name': 'Fields', 'avatar': 'https://reqres.in/img/faces/10-image.jpg'}, {'id': 11, 'email': 'george.edwards@reqres.in', 'first_name': 'George', 'last_name': 'Edwards', 'avatar': 'https://reqres.in/img/faces/11-image.jpg'}, {'id': 12, 'email': 'rachel.howell@reqres.in', 'first_name': 'Rachel', 'last_name': 'Howell', 'avatar': 'https://reqres.in/img/faces/12-image.jpg'}], 'support': {'url': 'https://reqres.in/#support-heading', 'text': 'To keep ReqRes free, contributions towards server costs are appreciated!'}}</msg>
+<msg timestamp="20231219 15:44:08.862" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:08.861" endtime="20231219 15:44:08.862"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>6</arg>
+<arg>${response.json()}[per_page]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231219 15:44:08.862" level="TRACE">Arguments: [ '6' | 6 ]</msg>
+<msg timestamp="20231219 15:44:08.862" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<msg timestamp="20231219 15:44:08.862" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:08.862" endtime="20231219 15:44:08.862"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>12</arg>
+<arg>${response.json()}[total]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231219 15:44:08.863" level="TRACE">Arguments: [ '12' | 12 ]</msg>
+<msg timestamp="20231219 15:44:08.863" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<msg timestamp="20231219 15:44:08.863" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:08.863" endtime="20231219 15:44:08.863"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>7</arg>
+<arg>${response.json()}[data][0][id]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231219 15:44:08.863" level="TRACE">Arguments: [ '7' | 7 ]</msg>
+<msg timestamp="20231219 15:44:08.863" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<msg timestamp="20231219 15:44:08.863" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:08.863" endtime="20231219 15:44:08.863"/>
+</kw>
+<status status="PASS" starttime="20231219 15:44:07.186" endtime="20231219 15:44:08.864"/>
+</test>
+<test id="s1-t2" name="Quick POST Request Test" line="22">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{req_body}</var>
+<arg>name=brian</arg>
+<arg>job=software developer</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231219 15:44:08.864" level="TRACE">Arguments: [ 'name=brian' | 'job=software developer' ]</msg>
+<msg timestamp="20231219 15:44:08.864" level="TRACE">Return: {'job': 'software developer', 'name': 'brian'}</msg>
+<msg timestamp="20231219 15:44:08.864" level="INFO">&amp;{req_body} = { name=brian | job=software developer }</msg>
+<status status="PASS" starttime="20231219 15:44:08.864" endtime="20231219 15:44:08.864"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20231219 15:44:08.865" level="TRACE">Arguments: [ 'https://reqres.in/api/users' | json={'job': 'software developer', 'name': 'brian'} | expected_status='201' ]</msg>
+<msg timestamp="20231219 15:44:08.866" level="DEBUG">Starting new HTTPS connection (1): reqres.in:443</msg>
+<msg timestamp="20231219 15:44:10.455" level="DEBUG">https://reqres.in:443 "POST /api/users HTTP/1.1" 201 93</msg>
+<msg timestamp="20231219 15:44:10.456" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '46', 'Content-Type': 'application/json'} 
+ body=b'{"name": "brian", "job": "software developer"}' 
+ </msg>
+<msg timestamp="20231219 15:44:10.456" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Tue, 19 Dec 2023 12:44:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '93', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1702989851&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=xH8Ey4ai3Tz%2F8Z15puFN8umZqzHnC26X4nL%2B9PVQOMY%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1702989851&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=xH8Ey4ai3Tz%2F8Z15puFN8umZqzHnC26X4nL%2B9PVQOMY%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"5d-hFnxAdMHS0JZIA9HT7RouFRWoKk"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '837fbc488e5274ba-MIA'} 
+ body={"name":"brian","job":"software developer","id":"986","createdAt":"2023-12-19T12:44:11.160Z"} 
+ </msg>
+<msg timestamp="20231219 15:44:10.456" level="TRACE">Return: &lt;Response [201]&gt;</msg>
+<msg timestamp="20231219 15:44:10.456" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20231219 15:44:08.864" endtime="20231219 15:44:10.456"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231219 15:44:10.457" level="TRACE">Arguments: [ {'createdAt': '2023-12-19T12:44:11.160Z',
+ 'id': '986',
+ 'job': 'software developer',
+ 'name': 'brian'} ]</msg>
+<msg timestamp="20231219 15:44:10.457" level="INFO">{'name': 'brian', 'job': 'software developer', 'id': '986', 'createdAt': '2023-12-19T12:44:11.160Z'}</msg>
+<msg timestamp="20231219 15:44:10.457" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:10.456" endtime="20231219 15:44:10.457"/>
+</kw>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${response.json()}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<msg timestamp="20231219 15:44:10.457" level="TRACE">Arguments: [ {'createdAt': '2023-12-19T12:44:11.160Z',
+ 'id': '986',
+ 'job': 'software developer',
+ 'name': 'brian'} | 'id' ]</msg>
+<msg timestamp="20231219 15:44:10.457" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:10.457" endtime="20231219 15:44:10.457"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231219 15:44:10.458" level="TRACE">Arguments: [ {'createdAt': '2023-12-19T12:44:11.160Z',
+ 'id': '986',
+ 'job': 'software developer',
+ 'name': 'brian'} | 'name' ]</msg>
+<msg timestamp="20231219 15:44:10.458" level="TRACE">Return: 'brian'</msg>
+<msg timestamp="20231219 15:44:10.458" level="INFO">${name} = brian</msg>
+<status status="PASS" starttime="20231219 15:44:10.457" endtime="20231219 15:44:10.458"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231219 15:44:10.458" level="TRACE">Arguments: [ 'brian' | 'brian' ]</msg>
+<msg timestamp="20231219 15:44:10.458" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20231219 15:44:10.458" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:10.458" endtime="20231219 15:44:10.458"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${job}</var>
+<arg>${response.json()}</arg>
+<arg>job</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231219 15:44:10.458" level="TRACE">Arguments: [ {'createdAt': '2023-12-19T12:44:11.160Z',
+ 'id': '986',
+ 'job': 'software developer',
+ 'name': 'brian'} | 'job' ]</msg>
+<msg timestamp="20231219 15:44:10.458" level="TRACE">Return: 'software developer'</msg>
+<msg timestamp="20231219 15:44:10.458" level="INFO">${job} = software developer</msg>
+<status status="PASS" starttime="20231219 15:44:10.458" endtime="20231219 15:44:10.458"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${expectedjob}</arg>
+<arg>${job}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231219 15:44:10.459" level="TRACE">Arguments: [ 'software developer' | 'software developer' ]</msg>
+<msg timestamp="20231219 15:44:10.459" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20231219 15:44:10.459" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:10.459" endtime="20231219 15:44:10.459"/>
+</kw>
+<status status="PASS" starttime="20231219 15:44:08.864" endtime="20231219 15:44:10.459"/>
+</test>
+<test id="s1-t3" name="Quick PUT Request Test" line="32">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{req_body}</var>
+<arg>name=update_test</arg>
+<arg>job=resident</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231219 15:44:10.459" level="TRACE">Arguments: [ 'name=update_test' | 'job=resident' ]</msg>
+<msg timestamp="20231219 15:44:10.460" level="TRACE">Return: {'job': 'resident', 'name': 'update_test'}</msg>
+<msg timestamp="20231219 15:44:10.460" level="INFO">&amp;{req_body} = { name=update_test | job=resident }</msg>
+<status status="PASS" starttime="20231219 15:44:10.459" endtime="20231219 15:44:10.460"/>
+</kw>
+<kw name="PUT" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${base_url}+/2</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a PUT request.</doc>
+<msg timestamp="20231219 15:44:10.460" level="TRACE">Arguments: [ 'https://reqres.in/api/users+/2' | json={'job': 'resident', 'name': 'update_test'} | expected_status='200' ]</msg>
+<msg timestamp="20231219 15:44:10.461" level="DEBUG">Starting new HTTPS connection (1): reqres.in:443</msg>
+<msg timestamp="20231219 15:44:11.566" level="DEBUG">https://reqres.in:443 "PUT /api/users+/2 HTTP/1.1" 200 None</msg>
+<msg timestamp="20231219 15:44:11.567" level="INFO">PUT Request : url=https://reqres.in/api/users+/2 
+ path_url=/api/users+/2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '42', 'Content-Type': 'application/json'} 
+ body=b'{"name": "update_test", "job": "resident"}' 
+ </msg>
+<msg timestamp="20231219 15:44:11.567" level="INFO">PUT Response : url=https://reqres.in/api/users+/2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 19 Dec 2023 12:44:12 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1702989852&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=GxpEFT8jqursQq%2Fricw%2FjXDo1F3k0isHub1Li0jSZc4%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1702989852&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=GxpEFT8jqursQq%2Fricw%2FjXDo1F3k0isHub1Li0jSZc4%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4e-jdwJovXfjWfYgqtMVF6o+gzPEVc"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '837fbc511bf0697e-CDG', 'Content-Encoding': 'gzip'} 
+ body={"name":"update_test","job":"resident","updatedAt":"2023-12-19T12:44:12.379Z"} 
+ </msg>
+<msg timestamp="20231219 15:44:11.567" level="TRACE">Return: &lt;Response [200]&gt;</msg>
+<msg timestamp="20231219 15:44:11.567" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231219 15:44:10.460" endtime="20231219 15:44:11.567"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231219 15:44:11.568" level="TRACE">Arguments: [ {'job': 'resident',
+ 'name': 'update_test',
+ 'updatedAt': '2023-12-19T12:44:12.379Z'} ]</msg>
+<msg timestamp="20231219 15:44:11.568" level="INFO">{'name': 'update_test', 'job': 'resident', 'updatedAt': '2023-12-19T12:44:12.379Z'}</msg>
+<msg timestamp="20231219 15:44:11.568" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:11.567" endtime="20231219 15:44:11.568"/>
+</kw>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<msg timestamp="20231219 15:44:11.568" level="TRACE">Arguments: [ {'job': 'resident',
+ 'name': 'update_test',
+ 'updatedAt': '2023-12-19T12:44:12.379Z'} | 'name' ]</msg>
+<msg timestamp="20231219 15:44:11.568" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:11.568" endtime="20231219 15:44:11.568"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231219 15:44:11.569" level="TRACE">Arguments: [ {'job': 'resident',
+ 'name': 'update_test',
+ 'updatedAt': '2023-12-19T12:44:12.379Z'} | 'name' ]</msg>
+<msg timestamp="20231219 15:44:11.569" level="TRACE">Return: 'update_test'</msg>
+<msg timestamp="20231219 15:44:11.569" level="INFO">${name} = update_test</msg>
+<status status="PASS" starttime="20231219 15:44:11.568" endtime="20231219 15:44:11.569"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${updated_expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231219 15:44:11.569" level="TRACE">Arguments: [ 'update_test' | 'update_test' ]</msg>
+<msg timestamp="20231219 15:44:11.569" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20231219 15:44:11.569" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:11.569" endtime="20231219 15:44:11.569"/>
+</kw>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${response.json()}</arg>
+<arg>job</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<msg timestamp="20231219 15:44:11.569" level="TRACE">Arguments: [ {'job': 'resident',
+ 'name': 'update_test',
+ 'updatedAt': '2023-12-19T12:44:12.379Z'} | 'job' ]</msg>
+<msg timestamp="20231219 15:44:11.569" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:11.569" endtime="20231219 15:44:11.569"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${job}</var>
+<arg>${response.json()}</arg>
+<arg>job</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231219 15:44:11.570" level="TRACE">Arguments: [ {'job': 'resident',
+ 'name': 'update_test',
+ 'updatedAt': '2023-12-19T12:44:12.379Z'} | 'job' ]</msg>
+<msg timestamp="20231219 15:44:11.570" level="TRACE">Return: 'resident'</msg>
+<msg timestamp="20231219 15:44:11.570" level="INFO">${job} = resident</msg>
+<status status="PASS" starttime="20231219 15:44:11.569" endtime="20231219 15:44:11.570"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${updated_expectedjob}</arg>
+<arg>${job}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231219 15:44:11.570" level="TRACE">Arguments: [ 'resident' | 'resident' ]</msg>
+<msg timestamp="20231219 15:44:11.570" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20231219 15:44:11.570" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 15:44:11.570" endtime="20231219 15:44:11.570"/>
+</kw>
+<status status="PASS" starttime="20231219 15:44:10.459" endtime="20231219 15:44:11.570"/>
+</test>
+<test id="s1-t4" name="Quick DELETE Request Test" line="44">
+<kw name="DELETE" library="RequestsLibrary">
+<var>${delete_resp}</var>
+<arg>${base_url}+/2</arg>
+<arg>expected_status=204</arg>
+<doc>Sends a DELETE request.</doc>
+<msg timestamp="20231219 15:44:11.572" level="TRACE">Arguments: [ 'https://reqres.in/api/users+/2' | expected_status='204' ]</msg>
+<msg timestamp="20231219 15:44:11.572" level="DEBUG">Starting new HTTPS connection (1): reqres.in:443</msg>
+<msg timestamp="20231219 15:44:12.607" level="DEBUG">https://reqres.in:443 "DELETE /api/users+/2 HTTP/1.1" 204 0</msg>
+<msg timestamp="20231219 15:44:12.607" level="INFO">DELETE Request : url=https://reqres.in/api/users+/2 
+ path_url=/api/users+/2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20231219 15:44:12.607" level="INFO">DELETE Response : url=https://reqres.in/api/users+/2 
+ status=204, reason=No Content 
+ headers={'Date': 'Tue, 19 Dec 2023 12:44:13 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1702989853&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=bqQafl0XNCH0K6NfDuVWRSLQglx4Cy8WXaHuYRjx9ho%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1702989853&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=bqQafl0XNCH0K6NfDuVWRSLQglx4Cy8WXaHuYRjx9ho%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '837fbc57a90d0076-CDG'} 
+ body=None 
+ </msg>
+<msg timestamp="20231219 15:44:12.607" level="TRACE">Return: &lt;Response [204]&gt;</msg>
+<msg timestamp="20231219 15:44:12.607" level="INFO">${delete_resp} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20231219 15:44:11.571" endtime="20231219 15:44:12.607"/>
+</kw>
+<status status="PASS" starttime="20231219 15:44:11.571" endtime="20231219 15:44:12.608"/>
+</test>
+<status status="PASS" starttime="20231219 15:44:07.100" endtime="20231219 15:44:12.609"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="API Demo">API Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
