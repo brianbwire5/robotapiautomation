@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240110 13:03:26.512" rpa="false" schemaversion="4">
+<suite id="s1" name="API Demo" source="C:\Users\KEN203364\PycharmProjects\RobotFramework\API_Tests\API_Demo.robot">
+<test id="s1-t1" name="Quick POST Request Test" line="22">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{req_body}</var>
+<arg>name=brian</arg>
+<arg>job=software developer</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240110 13:03:26.716" level="INFO">&amp;{req_body} = { name=brian | job=software developer }</msg>
+<status status="PASS" starttime="20240110 13:03:26.715" endtime="20240110 13:03:26.725"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20240110 13:03:28.508" level="FAIL">SSLError: HTTPSConnectionPool(host='reqres.in', port=443): Max retries exceeded with url: /api/users (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))</msg>
+<status status="FAIL" starttime="20240110 13:03:26.725" endtime="20240110 13:03:28.561"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240110 13:03:28.561" endtime="20240110 13:03:28.561"/>
+</kw>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${response.json()}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" starttime="20240110 13:03:28.561" endtime="20240110 13:03:28.561"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" starttime="20240110 13:03:28.562" endtime="20240110 13:03:28.562"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240110 13:03:28.562" endtime="20240110 13:03:28.562"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${job}</var>
+<arg>${response.json()}</arg>
+<arg>job</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" starttime="20240110 13:03:28.562" endtime="20240110 13:03:28.562"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${expectedjob}</arg>
+<arg>${job}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240110 13:03:28.562" endtime="20240110 13:03:28.562"/>
+</kw>
+<status status="FAIL" starttime="20240110 13:03:26.714" endtime="20240110 13:03:28.562">SSLError: HTTPSConnectionPool(host='reqres.in', port=443): Max retries exceeded with url: /api/users (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))</status>
+</test>
+<status status="FAIL" starttime="20240110 13:03:26.515" endtime="20240110 13:03:28.563"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="API Demo">API Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
